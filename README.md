@@ -19,7 +19,8 @@ An A2A (Agent-to-Agent) agent hosted on Google Cloud Run that redirects users to
 │   ├── register_a2a_agent.sh   # Register agent with Gemini Enterprise
 │   └── manage_a2a_agent.sh     # List/get/update/delete registrations
 ├── pyproject.toml
-└── .env                    # Environment variables (create from template below)
+├── example.env             # Template — copy to .env and fill in your values
+└── .env                    # Your environment variables (git-ignored)
 ```
 
 ## Prerequisites
@@ -44,14 +45,13 @@ This creates a `.venv` virtual environment and installs all dependencies from `p
 
 ### Set environment variables
 
-Create a `.env` file in the project root:
+Copy the included `example.env` to `.env` and fill in your values:
 
 ```bash
-REDIRECT_URL=https://www.example.com
-GOOGLE_CLOUD_PROJECT=your-gcp-project-id
-GOOGLE_CLOUD_LOCATION=us-central1
-GOOGLE_GENAI_USE_VERTEXAI=True
+cp example.env .env
 ```
+
+At minimum, set `REDIRECT_URL` and `GOOGLE_CLOUD_PROJECT` for local development. See the `.env` file for all available variables.
 
 ### Run locally with ADK Web
 
@@ -175,30 +175,13 @@ The registration scripts use the Discovery Engine API to add your A2A agent to t
 
 ### Set up `.env`
 
-Create a `.env` file in the project root with your registration configuration:
+If you haven't already, copy `example.env` to `.env` and fill in the registration-specific values:
 
 ```bash
-# GCP Project
-PROJECT_ID=your-gcp-project-id
-
-# Gemini Enterprise App (Engine) ID
-# Find this in the Gemini Enterprise console or via:
-#   gcloud alpha discovery-engine engines list --project=your-gcp-project-id --location=global
-APP_ID=your-gemini-enterprise-engine-id
-
-# App location (global, us, or eu)
-LOCATION=global
-
-# API endpoint location (global, us, or eu) — defaults to LOCATION if omitted
-ENDPOINT_LOCATION=global
-
-# Full URL to your deployed agent card
-AGENT_CARD_URL=https://YOUR_SERVICE_URL/a2a/redirect_agent/.well-known/agent-card.json
-
-# Optional: override display name and description for the Agent Gallery
-AGENT_DISPLAY_NAME=Cloud Run Redirect Agent
-AGENT_DESCRIPTION=An agent that redirects users to a configured URL
+cp example.env .env
 ```
+
+The registration scripts require these variables to be set in `.env`:
 
 | Variable | Required | Description |
 |---|---|---|
