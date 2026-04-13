@@ -1,0 +1,16 @@
+{
+  "name": "Cloud Run Redirect Agent",
+  "description": "An agent that redirects users to a configured URL",
+  "url": "https://cloud-run-redirect-agent-473900759553.us-central1.run.app/a2a/redirect_agent",
+  "version": "1.0.0",
+  "defaultInputModes": ["text/plain"],
+  "defaultOutputModes": ["text/plain"],
+  "capabilities": {},
+  "skills": [
+    {
+      "id": "redirect",
+      "name": "Redirect",
+      "description": "Redirects the user to a pre-configured URL"
+    }
+  ]
+}
