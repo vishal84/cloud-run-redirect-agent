@@ -4,7 +4,7 @@
   "url": "https://cloud-run-redirect-agent-473900759553.us-central1.run.app/a2a/redirect_agent",
   "version": "1.0.0",
   "defaultInputModes": ["text/plain"],
-  "defaultOutputModes": ["text/plain"],
+  "defaultOutputModes": ["text/html", "text/plain"],
   "capabilities": {},
   "skills": [
     {
