@@ -10,7 +10,8 @@
     {
       "id": "redirect",
       "name": "Redirect",
-      "description": "Redirects the user to a pre-configured URL"
+      "description": "Redirects the user to a pre-configured URL",
+      "tags": ["redirect", "navigation"]
     }
   ]
 }

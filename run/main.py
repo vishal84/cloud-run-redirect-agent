@@ -1,8 +1,11 @@
 import os
 from google.adk.cli.fast_api import get_fast_api_app
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
 
 app = get_fast_api_app(
-    agents_dir=os.path.dirname(os.path.abspath(__file__)),
+    agents_dir=".",
     web=False,
     a2a=True,
     host="0.0.0.0",
