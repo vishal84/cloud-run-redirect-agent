@@ -1,0 +1,12 @@
+[project]
+name = "cloud-run-redirect-agent"
+version = "0.1.0"
+description = "An agent that redirects to a provided URL"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "python-dotenv",
+    "google-adk>=1.23.0",
+]
