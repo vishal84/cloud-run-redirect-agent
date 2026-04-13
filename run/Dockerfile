@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.11-slim
 
 # Allow statements and log messages to immediately appear in the Knative logs
 ENV PYTHONUNBUFFERED True
@@ -9,8 +9,9 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy local code to the container image.
+# Copy application code to the container image.
 COPY main.py .
+COPY redirect_agent/ redirect_agent/
 
 # Port 8080 is the default for Cloud Run
 EXPOSE 8080
